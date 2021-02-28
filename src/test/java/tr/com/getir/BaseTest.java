@@ -32,6 +32,7 @@ public class BaseTest implements TestLifeCycleLogger{
         cap.setCapability("appPackage","com.sec.android.app.popupcalculator");
         cap.setCapability("appActivity","com.sec.android.app.popupcalculator.Calculator");
 
+
         URL url = null;
         try {
             url = new URL("http://127.0.0.1:4723/wd/hub");

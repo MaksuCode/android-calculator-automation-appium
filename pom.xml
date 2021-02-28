@@ -84,6 +84,12 @@
             <version>${junitplatform.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.opentest4j</groupId>
             <artifactId>opentest4j</artifactId>
             <version>1.2.0</version>
