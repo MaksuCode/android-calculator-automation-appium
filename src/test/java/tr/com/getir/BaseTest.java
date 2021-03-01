@@ -5,12 +5,15 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.provider.Arguments;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import tr.com.getir.extensions.TestLifeCycleLogger;
 import tr.com.getir.extensions.TimingExtension;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Random;
+import java.util.stream.Stream;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 @ExtendWith(TimingExtension.class)
@@ -50,6 +53,28 @@ public class BaseTest implements TestLifeCycleLogger{
     public void globalTearDown(){
         driver.quit();
         TestLifeCycleLogger.logger.info("App terminated...");
+    }
+
+    protected static Stream<Arguments> provideNumberArrayForTest(){
+        int[] numbers = new int[10];
+        Random random = new Random();
+        for (int i = 0 ; i < numbers.length ; i++){
+            numbers[i] = random.nextInt(10);
+        }
+        return Stream.of(
+                Arguments.of(numbers)
+        );
+    }
+
+    protected static Stream<Arguments> provideTwoNumbers(){
+        int[] numbers = new int[2];
+        Random random = new Random();
+        for (int i = 0 ; i < numbers.length ; i++){
+            numbers[i] = random.nextInt(10);
+        }
+        return Stream.of(
+                Arguments.of(numbers)
+        );
     }
 
 
