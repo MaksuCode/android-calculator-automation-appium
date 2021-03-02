@@ -30,4 +30,9 @@ public class SubtractionTest extends BaseTest {
         }
         return result;
     }
+
+    @Test
+    public void test(){
+        System.out.println("test git");
+    }
 }
