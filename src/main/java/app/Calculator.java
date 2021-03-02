@@ -3,6 +3,8 @@ package app;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebDriver;
 
+import java.net.PortUnreachableException;
+
 public class Calculator extends BaseApp{
 
     private final Numbers numbers;
@@ -34,6 +36,10 @@ public class Calculator extends BaseApp{
 
     public int sub(int[] values){
         return operation("sub", values);
+    }
+
+    public int mul(int[] values){
+        return operation("mul" , values);
     }
 
     public int add(int a , int b){

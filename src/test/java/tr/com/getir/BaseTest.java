@@ -59,7 +59,7 @@ public class BaseTest implements TestLifeCycleLogger{
         int[] numbers = new int[10];
         Random random = new Random();
         for (int i = 0 ; i < numbers.length ; i++){
-            numbers[i] = random.nextInt(10);
+            numbers[i] = random.nextInt(10) + 1;
         }
         return Stream.of(
                 Arguments.of(numbers)
