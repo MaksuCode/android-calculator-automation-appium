@@ -56,10 +56,10 @@ public class BaseTest implements TestLifeCycleLogger{
     }
 
     protected static Stream<Arguments> provideNumberArrayForTest(){
-        int[] numbers = new int[10];
+        int[] numbers = new int[5];
         Random random = new Random();
         for (int i = 0 ; i < numbers.length ; i++){
-            numbers[i] = random.nextInt(10) + 1;
+            numbers[i] = random.nextInt(5) + 1;
         }
         return Stream.of(
                 Arguments.of(numbers)
@@ -71,6 +71,17 @@ public class BaseTest implements TestLifeCycleLogger{
         Random random = new Random();
         for (int i = 0 ; i < numbers.length ; i++){
             numbers[i] = random.nextInt(10);
+        }
+        return Stream.of(
+                Arguments.of(numbers)
+        );
+    }
+
+    protected static Stream<Arguments> provideTwoDigitNumbers(){
+        int[] numbers = new int[5];
+        Random random = new Random();
+        for (int i = 0 ; i < numbers.length ; i++){
+            numbers[i] = random.nextInt(99) ;
         }
         return Stream.of(
                 Arguments.of(numbers)

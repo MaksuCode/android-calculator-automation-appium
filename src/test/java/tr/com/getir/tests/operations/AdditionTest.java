@@ -27,6 +27,13 @@ public class AdditionTest extends BaseTest {
         Assertions.assertEquals(result , countOfNumbers(numbers));
     }
 
+    @ParameterizedTest
+    @MethodSource("provideTwoDigitNumbers")
+    public void add_two_digit_numbers(int[] numbers){
+        int result =calculator.add(numbers);
+        Assertions.assertEquals(result , countOfNumbers(numbers));
+    }
+
     private static int countOfNumbers(int[] numbers){
         int sum = 0 ;
         for (int number : numbers) {

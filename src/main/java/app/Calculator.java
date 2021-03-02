@@ -41,6 +41,10 @@ public class Calculator extends BaseApp{
     public int mul(int[] values){
         return operation("mul" , values);
     }
+    
+    public int div(int[] values) {
+        return operation("div" , values);    
+    }
 
     public int add(int a , int b){
         int[] values = {a , b};
@@ -62,9 +66,16 @@ public class Calculator extends BaseApp{
         return operation("div" , values);
     }
 
+    // TODO: 2.03.2021 Fix this method for multiplication and division opearations and refactor it!!! 
     private int operation(String operation , int[] values){
         for (int i = 0; i < values.length ; i++){
-            numbers.number(values[i]).click();
+            int value = values[i];
+            if (value > 10){
+                numbers.number(value / 10).click();
+                numbers.number(value % 10).click();
+            }else{
+                numbers.number(value).click();
+            }
             if (i != values.length-1){
                 switch (operation){
                     case "add":
@@ -84,16 +95,14 @@ public class Calculator extends BaseApp{
         }
         operations.equals().click();
         String result = resultScreen.getResult() ;
+        if (result.contains(".")){
+            result = result.replace(".","");
+        }
         try {
             return Integer.parseInt(result);
         }catch (NumberFormatException nfe){
             return Integer.parseInt(result.substring(1)) * -1;
         }
     }
-
-
-
-
-
 
 }

@@ -23,6 +23,13 @@ public class SubtractionTest extends BaseTest {
         Assertions.assertEquals(subtractionOfNumbers(numbers),result);
     }
 
+    @ParameterizedTest
+    @MethodSource("provideTwoDigitNumbers")
+    public void subtract_two_digit_numbers(int[] numbers){
+        int result = calculator.sub(numbers);
+        Assertions.assertEquals(subtractionOfNumbers(numbers),result);
+    }
+
     private static int subtractionOfNumbers(int[] numbers){
         int result = numbers[0];
         for (int i = 1 ; i < numbers.length ; i ++){
