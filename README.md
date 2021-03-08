@@ -1,12 +1,12 @@
 # Android app automation with Appium and Junit-5
 
-##Preparation
+## Preparation
 
  * ### Appium needs to be installed on OS. If not install it.
  * ### Install appium-doctor to check if you are good to go(Gives a sufficient report)
  * ### According to appium-doctor report complete your preparation
 
-##Running the project
+## Running the project
 
 * ### Plug your android device to PC with cable or wi-fi connection
 * ### Check if the device is connected properly by "adb devices" command on terminal
