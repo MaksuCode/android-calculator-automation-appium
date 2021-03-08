@@ -3,9 +3,11 @@ package tr.com.getir;
 import app.Calculator;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.provider.Arguments;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import tr.com.getir.extensions.TestLifeCycleLogger;
 import tr.com.getir.extensions.TimingExtension;
@@ -28,13 +30,13 @@ public class BaseTest implements TestLifeCycleLogger{
     public void globalSetUp(){
 
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability("deviceName","SM-M215F/DSN"); //any random value is valid but...
+        cap.setCapability("deviceName","SM-M215F/DSN");
         cap.setCapability("udid","R58NA269Y0M");
-        cap.setCapability("platformName","Android");
-        cap.setCapability("platformVersion","10");
+        cap.setCapability("platformName","ANDROID");
+        cap.setCapability("platformVersion","11");
+        //cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT , 60);
         cap.setCapability("appPackage","com.sec.android.app.popupcalculator");
         cap.setCapability("appActivity","com.sec.android.app.popupcalculator.Calculator");
-
 
         URL url = null;
         try {

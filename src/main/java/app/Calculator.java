@@ -1,9 +1,6 @@
 package app;
 
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.WebDriver;
-
-import java.net.PortUnreachableException;
 
 public class Calculator extends BaseApp{
 
@@ -66,7 +63,7 @@ public class Calculator extends BaseApp{
         return operation("div" , values);
     }
 
-    // TODO: 2.03.2021 Fix this method for multiplication and division opearations and refactor it!!! 
+    // TODO: 2.03.2021 Fix this method for multiplication and division operations and refactor it!!!
     private int operation(String operation , int[] values){
         for (int i = 0; i < values.length ; i++){
             int value = values[i];

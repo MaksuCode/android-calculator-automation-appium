@@ -1,14 +1,11 @@
 package tr.com.getir.tests.operations;
 
-import io.appium.java_client.MobileElement;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tr.com.getir.BaseTest;
 
-import java.util.Random;
-import java.util.stream.Stream;
 
 public class AdditionTest extends BaseTest {
 

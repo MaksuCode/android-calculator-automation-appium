@@ -21,7 +21,7 @@ public class BaseApp {
 
     protected void click(MobileElement mobileElement){
         try {
-            WebDriverWait wait = new WebDriverWait(driver , 10);
+            WebDriverWait wait = new WebDriverWait(driver , 5);
             wait.until(ExpectedConditions.elementToBeClickable(mobileElement));
         }catch (Exception e){
             e.printStackTrace();
@@ -31,7 +31,7 @@ public class BaseApp {
 
     protected void wait(MobileElement mobileElement){
         try {
-            WebDriverWait wait = new WebDriverWait(driver , 10);
+            WebDriverWait wait = new WebDriverWait(driver , 5);
             wait.until(ExpectedConditions.elementToBeClickable(mobileElement));
         }catch (Exception e){
             e.printStackTrace();
